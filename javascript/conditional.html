@@ -1,0 +1,18 @@
+<html>
+<body>
+    <h1>Conditional Statements</h1>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
+    <script>
+        var myPassword = '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4';
+        var inputPassword = prompt('Password?');
+        var shaPw = sha256(inputPassword)
+        if(shaPw == myPassword){
+        // myPassword와 inputPassword가 같다면?
+            alert('안녕하세요. 주인님? ^^ ^^');
+        // 아니라면?
+        } else {
+            alert('뉘슈?');
+        }
+    </script>
+</body>
+</html>
