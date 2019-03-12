@@ -18,9 +18,8 @@
             </ol>
         </div>
         <div id="article">
-            <input type="button" value="night" onclick="
-                if( this.value == 'night' )
-                {
+            <script>
+                function toNight(){
                     document.querySelector('body').style.backgroundColor = 'black'
                     document.querySelector('body').style.color = 'white';
                     var as = document.querySelectorAll('a');
@@ -29,11 +28,9 @@
                     {
                         as[i].style.color = 'white';
                     }
+                }    
 
-                    this.value = 'day';
-                }                
-                else
-                {
+                function toDay(){
                     document.querySelector('body').style.backgroundColor = 'white'
                     document.querySelector('body').style.color = 'black';
                     var as = document.querySelectorAll('a');
@@ -42,7 +39,17 @@
                     {
                         as[i].style.color = 'black';
                     }
-
+                }            
+            </script>
+            <input type="button" value="night" onclick="
+                if( this.value == 'night' )
+                {
+                    toNight();
+                    this.value = 'day';
+                }                
+                else
+                {
+                    toDay();
                     this.value = 'night';
                 }
             ">
