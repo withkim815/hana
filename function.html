@@ -2,17 +2,26 @@
     <body>
         <h1>function</h1>
             <script>
-                fucntion one_plus_one(){
+                function one_plus_one(){
                     var left = 1;
                     var right =2;
                     alert(left+right);
                 }
+
+                function sum( a, b){
+                    //alert(a+b);
+                    return a+b;
+                }
             </script>
-            <input type="button" value="1+2" onclick="one_plus_one()">
+            <input type="button" value="1+2" onclick="
+            alert(sum(1,2) );
+            ">
 
-            <input type="button" value="1+2" onclick="one_plus_one()">
+            <input type="button" value="change body => 2+3" onclick="
+            document.querySelector('body').innerHTML = sum(2,3);
+            ">
 
-            <input type="button" value="1+2" onclick="one_plus_one()">
+            <input type="button" value="3+4" onclick="sum(3,4)">
 
         </h1>
     </body>

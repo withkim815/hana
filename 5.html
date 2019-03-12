@@ -4,58 +4,64 @@
     <title>WEB</title>
     <meta charset="utf-8">    
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+          google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['은행명', '사용자수'],
+          ['하나',     5000000],
+          ['우리',      4000000],
+          ['신한',  3500000],
+          ['카카오', 2000000],
+          ['기타',    1500000]
+        ]);
+
+        var options = {
+          pieSliceText: 'label',
+          title: '은행별 뱅킹앱 점유율',
+          is3D: true
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
 </head>
 <body>
     <h1><a href="index.html">WEB</a></h1>
     <div id="container">
         <div>
             <ol>
-                <li><a href="1.html">html</a></li>
-                <li><a href="2.html">css</a></li>
-                <li><a href="3.html">javascript</a></li>
-                <li><a href="4.html">nodejs</a></li>
-                <li><a href="5.html">database</a></li>
-            </ol>
+                    <li><a href="1.html">HTML</a></li>
+                    <li><a href="2.html">CSS</a></li>
+                    <li><a href="3.html">JavaScript</a></li>
+                    <li><a href="4.html">WWW</a></li>
+                    <li><a href="5.html">Database</a></li>
+                    </ol>
         </div>
         <div id="article">
-            <script>
-                function toNight(){
-                    document.querySelector('body').style.backgroundColor = 'black'
-                    document.querySelector('body').style.color = 'white';
-                    var as = document.querySelectorAll('a');
-                    var i;
-                    for( i=0; i<as.length; i++ )
-                    {
-                        as[i].style.color = 'white';
-                    }
-                }    
-
-                function toDay(){
-                    document.querySelector('body').style.backgroundColor = 'white'
-                    document.querySelector('body').style.color = 'black';
-                    var as = document.querySelectorAll('a');
-                    var i;
-                    for( i=0; i<as.length; i++ )
-                    {
-                        as[i].style.color = 'black';
-                    }
-                }            
-            </script>
             <input type="button" value="night" onclick="
                 if( this.value == 'night' )
                 {
-                    toNight();
+                    Color.toNight();
                     this.value = 'day';
                 }                
                 else
                 {
-                    toDay();
+                    Color.toDay();
                     this.value = 'night';
                 }
             ">
             
             <h2>Database</h2>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum quae pariatur, labore itaque voluptatem corrupti a, quis quos facere sit, beatae illum? Tenetur, id vitae. Omnis nemo illo saepe fugiat.
+            <div id="piechart" style="width: 900px; height: 500px;"></div>
         </div>
                 
     </div>
@@ -81,4 +87,6 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
                             
 </body>
+
+
 </html>
